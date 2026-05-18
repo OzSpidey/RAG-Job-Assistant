@@ -4,6 +4,8 @@ A production-grade Retrieval-Augmented Generation (RAG) application that lets yo
 
 Built as a demonstration of end-to-end RAG architecture — from data ingestion and vector embedding to semantic retrieval and LLM-powered answer generation.
 
+![Agent OZ RAG Demo](assets/demo.jpg)
+
 ---
 
 ## What It Does
