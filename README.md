@@ -2,7 +2,7 @@
 
 A production-grade Retrieval-Augmented Generation (RAG) application that lets you query thousands of real job listings using natural language. Ask questions like *"Which fintech companies have remote AI engineer roles that sponsor visas?"* and get precise, cited answers backed by a local vector database.
 
-Built as a demonstration of end-to-end RAG architecture — from data ingestion and vector embedding to semantic retrieval and LLM-powered answer generation.
+Built as a demonstration of end-to-end RAG architecture, from data ingestion and vector embedding to semantic retrieval and LLM-powered answer generation.
 
 ![Agent OZ RAG Demo](assets/demo.jpg)
 
@@ -10,13 +10,13 @@ Built as a demonstration of end-to-end RAG architecture — from data ingestion 
 
 ## What It Does
 
-Most job boards offer keyword search. This app offers **semantic search** — it understands the *meaning* of your query and matches it against job descriptions, not just surface-level keywords.
+Most job boards offer keyword search. This app offers **semantic search**, it understands the *meaning* of your query and matches it against job descriptions, not just surface-level keywords.
 
 Under the hood:
 - 5,000+ job postings are embedded into a local vector database using a sentence transformer model
 - At query time, your question is embedded and matched against all job vectors using cosine similarity
 - The top matches are passed as context to a large language model (Llama 3.3 70B via Groq)
-- The LLM synthesises a precise, cited answer using only the retrieved jobs — no hallucination
+- The LLM synthesises a precise, cited answer using only the retrieved jobs, no hallucination
 
 ---
 
@@ -47,14 +47,14 @@ SQLite Database (job postings)
 
 ## Features
 
-- **Semantic search** — finds jobs by meaning, not keywords. "ML position" matches "machine learning role"
-- **Natural language Q&A** — ask in plain English, get cited answers with direct job links
-- **Animated Streamlit UI** — chat interface with job cards, hover effects, and staggered animations
-- **Raw search mode** — bypass the LLM for instant vector similarity results
-- **Sidebar filters** — filter by remote, active listings, or experience level before searching
-- **Incremental ingestion** — re-run `ingest.py` any time to pick up new jobs without re-indexing existing ones
-- **CLI mode** — terminal interface for quick queries without launching the web app
-- **Zero cloud dependency for embeddings** — the sentence transformer model runs fully locally (ONNX)
+- **Semantic search**, finds jobs by meaning, not keywords. "ML position" matches "machine learning role"
+- **Natural language Q&A**, ask in plain English, get cited answers with direct job links
+- **Animated Streamlit UI**, chat interface with job cards, hover effects, and staggered animations
+- **Raw search mode**, bypass the LLM for instant vector similarity results
+- **Sidebar filters**, filter by remote, active listings, or experience level before searching
+- **Incremental ingestion**, re-run `ingest.py` any time to pick up new jobs without re-indexing existing ones
+- **CLI mode**, terminal interface for quick queries without launching the web app
+- **Zero cloud dependency for embeddings**, the sentence transformer model runs fully locally (ONNX)
 
 ---
 
@@ -99,7 +99,7 @@ GROQ_API_KEY=your_groq_api_key_here   # free at console.groq.com
 JOB_DB_PATH=/path/to/your/jobs.db     # SQLite DB with a 'jobs' table
 ```
 
-**Getting a free Groq API key:** Sign up at [console.groq.com](https://console.groq.com) — no credit card required. The free tier allows 14,400 requests per day.
+**Getting a free Groq API key:** Sign up at [console.groq.com](https://console.groq.com), no credit card required. The free tier allows 14,400 requests per day.
 
 ### 4. Build the vector index
 
@@ -174,9 +174,9 @@ data pipeline spark dbt
 
 Traditional search matches your query to keywords. RAG does something smarter:
 
-1. **Embed** — every job description is converted into a list of numbers (a vector) that captures its *meaning*. Similar jobs produce similar numbers.
-2. **Search** — your question is converted the same way. ChromaDB finds the stored jobs whose vectors are closest to your question's vector.
-3. **Generate** — the top matching jobs are handed to an LLM as context. The LLM reads only those jobs and writes a precise answer. It cannot make up jobs that aren't there.
+1. **Embed**, every job description is converted into a list of numbers (a vector) that captures its *meaning*. Similar jobs produce similar numbers.
+2. **Search**, your question is converted the same way. ChromaDB finds the stored jobs whose vectors are closest to your question's vector.
+3. **Generate**, the top matching jobs are handed to an LLM as context. The LLM reads only those jobs and writes a precise answer. It cannot make up jobs that aren't there.
 
 The result: you get answers grounded in real data, not hallucinations.
 
